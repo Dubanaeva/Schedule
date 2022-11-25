@@ -1,2 +1,2 @@
-def weather_s():
+def weather():
     pass
