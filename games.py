@@ -1,3 +1,0 @@
-
-def games():
-    pass
