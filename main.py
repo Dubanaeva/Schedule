@@ -1,10 +1,9 @@
 import telebot
 from telebot import types
-import config
 import requests
 from bs4 import BeautifulSoup as BS
 
-bot = telebot.TeleBot(config.token)
+bot = telebot.TeleBot("5788489755:AAGzRBtcg1zDAPXK4SiBFHOZhsSP4i1NDq8")
 
 r = requests.get("https://sinoptik.ua/погода-бишкек")
 html = BS(r.content, "html.parser")
