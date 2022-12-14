@@ -44,24 +44,58 @@ for el in html.select('#content'):
 @bot.message_handler(commands=['start'])
 def start(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    btn1 = types.KeyboardButton("🎓About AIU")
-    btn2 = types.KeyboardButton("☰Schedule")
-    btn3 = types.KeyboardButton("❆Weather")
-    btn4 = types.KeyboardButton("💻Final exams")
-    btn5 = types.KeyboardButton("🍴Dining prices")
-    btn6 = types.KeyboardButton("🤾Sports mugs")
+    btn1 = types.KeyboardButton("☰Schedule")
+    btn2 = types.KeyboardButton("❆Weather")
+    btn3 = types.KeyboardButton("💻Final exams")
+    btn4 = types.KeyboardButton("🍴Dining prices")
+    btn5 = types.KeyboardButton("🤾Sports mugs")
+    btn6 = types.KeyboardButton("Namaz time")
     markup.add(btn1, btn2, btn3, btn4, btn5, btn6)
     bot.send_message(message.chat.id, text="Hi, {0.first_name}! I am interesting & useful bot for Ala-Too International students".format(message.from_user), reply_markup=markup)
 
 @bot.message_handler(content_types=['text'])
 def func(message):
-    if(message.text == "🎓About AIU"):
+    if(message.text == "Namaz time"):
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-        back = types.KeyboardButton("Back")
-        markup.add(back)
-
+        item = types.KeyboardButton('JAN')
+        item2 = types.KeyboardButton('FEB')
+        item3 = types.KeyboardButton('MAR')
+        item4 = types.KeyboardButton('APR')
+        item5 = types.KeyboardButton('MAY')
+        item6 = types.KeyboardButton('JUN')
+        item7 = types.KeyboardButton('JUL')
+        item8 = types.KeyboardButton('AUG')
+        item9 = types.KeyboardButton('SEP')
+        item10 = types.KeyboardButton('OCT')
+        item11 = types.KeyboardButton('NOV')
+        item12 = types.KeyboardButton('DEC')
+        markup.add(item, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12)
         bot.send_message(message.chat.id, text="->", reply_markup=markup)
-        bot.send_message(message.chat.id, text="The state governing body of the university is the Ministry of Education and Science of the Kyrgyz Republic.The founder of Ala-Too International University is Sapat International Educational Institutions. Ala-Too International University (AIU) was established in 1996 and it is located in Bishkek, the Kyrgyz Republic.")
+    if message.text == 'JAN':
+        bot.send_message(message.chat.id, text = 'JANUARY:\nFadjr: 6:38, 2 rakats Sunnah,2 rakats Fardh\nDhuhr: 13:07, 4 rakats Sunnah,4 rakats Fardh,2 rakats Sunnah\nAsr: 16:15, 4 rakats Fardh\nMaghrib: 18:06,3 rakats Fardh,2 rakats Sunnah\nIsha: 19:48, 4 rakats Fardh,2 rakats Sunnah, 3 rakats Witr')
+    elif message.text == 'FEB':
+        bot.send_message(message.chat.id, text = 'FEBRUARY:\nFadjr: 6:21, 2 rakats Sunnah,2 rakats Fardh\nDhuhr: 13:17, 4 rakats Sunnah,4 rakats Fardh,2 rakats Sunnah\nAsr: 16:35, 4 rakats Fardh\nMaghrib: 18:33, 3 rakats Fardh,2 rakats Sunnah\nIsha: 20:10, 4 rakats Fardh,2 rakats Sunnah, 3 rakats Witr')
+    elif message.text == 'MAR':
+        bot.send_message(message.chat.id, text = 'MARCH:\nFadjr: 6:00, 2 rakats Sunnah,2 rakats Fardh\nDhuhr: 13:16, 4 rakats Sunnah,4 rakats Fardh,2 rakats Sunnah\nAsr: 17:07, 4 rakats Fardh\nMaghrib: 19:10, 3 rakats Fardh,2 rakats Sunnah\nIsha: 21:00, 4 rakats Fardh,2 rakats Sunnah, 3 rakats Witr')
+    elif message.text == 'APR':
+        bot.send_message(message.chat.id, text = 'APRIL:\nFadjr: 5:05, 2 rakats Sunnah,2 rakats Fardh\nDhuhr: 13:08, 4 rakats Sunnah,4 rakats Fardh,2 rakats Sunnah\nAsr: 17:36, 4 rakats Fardh\nMaghrib: 19:29, 3 rakats Fardh,2 rakats Sunnah\nIsha: 21:29, 4 rakats Fardh,2 rakats Sunnah, 3 rakats Witr')
+    elif message.text == 'MAY':
+        bot.send_message(message.chat.id, text = 'MAY:\nFadjr: 4:04, 2 rakats Sunnah,2 rakats Fardh\nDhuhr: 13:07, 4 rakats Sunnah,4 rakats Fardh,2 rakats Sunnah\nAsr: 17:58, 4 rakats Fardh\nMaghrib: 20:04, 3 rakats Fardh,2 rakats Sunnah\nIsha: 22:11, 4 rakats Fardh,2 rakats Sunnah, 3 rakats Witr')
+    elif message.text == 'JUN':
+        bot.send_message(message.chat.id, text = 'JUNE:\nFadjr: 3:13, 2 rakats Sunnah,2 rakats Fardh\nZuhr: 13:07, 4 rakats Sunnah,4 rakats Fardh,2 rakats Sunnah\nAsr: 18:17, 4 rakats Fardh\nMaghrib: 20:35, 3 rakats Fardh,2 rakats Sunnah\nIsha: 22:37, 4 rakats Fardh,2 rakats Sunnah, 3 rakats Witr')
+    elif message.text == 'JUL':
+        bot.send_message(message.chat.id, text = 'JULY:\nFadjr: 3:08, 2 rakats Sunnah,2 rakats Fardh\nDhuhr: 13:07, 4 rakats Sunnah,4 rakats Fardh,2 rakats Sunnah\nAsr: 18:25, 4 rakats Fardh\nMaghrib: 20:46, 3 rakats Fardh,2 rakats Sunnah\nIsha: 22:52, 4 rakats Fardh,2 rakats Sunnah, 3 rakats Witr')
+    elif message.text == 'AUG':
+        bot.send_message(message.chat.id, text = 'AUGUST:\nFadjr: 3:53, 2 rakats Sunnah,2 rakats Fardh\nDhuhr: 13:10, 4 rakats Sunnah,4 rakats Fardh,2 rakats Sunnah\nAsr: 18:15, 4 rakats Fardh\nMaghrib: 20:05, 3 rakats Fardh,2 rakats Sunnah\nIsha: 22:06, 4 rakats Fardh,2 rakats Sunnah, 3 rakats Witr')
+    elif message.text == 'SEP':
+        bot.send_message(message.chat.id, text = 'SEPTEMBER:\nFadjr: 5:06, 2 rakats Sunnah,2 rakats Fardh\nDhuhr: 13:04, 4 rakats Sunnah,4 rakats Fardh,2 rakats Sunnah\nAsr: 17:17, 4 rakats Fardh\nMagrib: 19:16, 3 rakats Fardh,2 rakats Sunnah\nIsha: 21:11, 4 rakats Fardh,2 rakats Sunnah, 3 rakats Witr')
+    elif message.text == 'OCT':
+        bot.send_message(message.chat.id, text = 'OCTOBER:\nFadjr: 5:22, 2 rakats Sunnah,2 rakats Fardh\nDhuhr: 12:53, 4 rakats Sunnah,4 rakats Fardh,2 rakats Sunnah\nAsr: 16:59, 4 rakats Fardh\nMaghrib: 18:45, 3 rakats Fardh,2 rakats Sunnah\nIsha: 20:14, 4 rakats Fardh,2 rakats Sunnah, 3 rakats Witr')
+    elif message.text == 'NOV':
+        bot.send_message(message.chat.id, text = 'NOVEMBER:\nFadjr: 6:17, 2 rakats Sunnah,2 rakats Fardh\nDhuhr: 12:47, 4 rakats Sunnah,4 rakats Fardh,2 rakats Sunnah\nAsr: 16:14, 4 rakats Fardh\nMaghrib: 17:54, 3 rakats Fardh,2 rakats Sunnah\nIsha: 19:27, 4 rakats Fardh,2 rakats Sunnah, 3 rakats Witr')
+    elif message.text == 'DEC':
+        bot.send_message(message.chat.id, text = 'DECEMBER:\nFadjr: 6:29, 2 rakats Sunnah,2 rakats Fardh\nDhuhr: 12:53, 4 rakats Sunnah,4 rakats Fardh,2 rakats Sunnah\nAsr: 15:47, 4 rakats Fardh\nMaghrib: 17:29, 3 rakats Fardh,2 rakats Sunnah\nIsha: 19:06, 4 rakats Fardh,2 rakats Sunnah, 3 rakats Witr')
+
     elif(message.text == "❆Weather"):
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         today = types.KeyboardButton("☘Today")
@@ -497,12 +531,12 @@ def func(message):
         #Back
     elif(message.text == "Back"):
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-        button1 = types.KeyboardButton("🎓About AIU")
-        button2 = types.KeyboardButton("☰Schedule")
+        button6 = types.KeyboardButton("Namaz time")
+        button1 = types.KeyboardButton("☰Schedule")
         button3 = types.KeyboardButton("❆Weather")
         button4 = types.KeyboardButton("💻Final exams")
         button5 = types.KeyboardButton("🍴Dining prices")
-        button6 = types.KeyboardButton("🤾Sports mugs")
+        button2 = types.KeyboardButton("🤾Sports mugs")
         markup.add(button1, button2, button3, button4, button5, button6)
         bot.send_message(message.chat.id, text="You are on the main menu 🥰", reply_markup=markup)
     else:
